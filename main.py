@@ -1,3 +1,5 @@
-Themen:
-Team: Lauremz, Vanessa, Jonathan
-  
+#Themen:
+#Team: Lauremz, Vanessa, Jonathan
+
+x = 1+1 
+print(x)
