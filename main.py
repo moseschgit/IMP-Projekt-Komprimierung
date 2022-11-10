@@ -2,20 +2,21 @@
 #Gruppe: Laurenz Jonathan Vanessa
 #https://www.youtube.com/watch?v=wI9yE7ZIbMg
 
-
-#import PIL 
-#from PIL import Image
-
-#Anfang = int(input("Write 10, in order to start the picture compression."))
-
-#def save_compressed():
-#  img.save("./images/IMP Bild Lichtenstern Logo.jpg","JPEG", optimize=True, quality=100)
+#Überlegung 1 
+#Bild in Replit einfügen --> Überlegung 2 wird durchgeführt --> Bild wird komprimiert Ausgegeben
+# --> PROBLEM: KANN KEIN BILD EINFÜGEN/ AUSGEBEN
 
 
 
+#Überlegung 2
+#bild in der theorie komprimieren
+#pixel werden mit Listen angegeben, die zusammengefasst werden 
+#wenn pixel, die nebeneinander liegen ähnlich sind, werden sie zusammengefasst.
+#am Ende schauen, wie viel gespeichert wurde
 
-  
 
-#if Anfang == 10:
-#  img = Image.open("./images/IMP Bild Lichtenstern Logo.png")
+
+
+
+
 
