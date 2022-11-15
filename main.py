@@ -2,7 +2,6 @@
 #Gruppe: Laurenz Jonathan Vanessa
 
 
-
 #Protokoll noch schreiben
 # schauen, was wir sonst noch machen müssen vanessa
 #codierung verstehen, erklären ycbcr laurenz
@@ -26,4 +25,16 @@
 
 
 
+#Procreate design 
 
+
+#möglichkeit fürs Schaubild
+#import matplotlib.pyplot as plt
+#import numpy as np
+
+#x = np.linspace(0, 2 * np.pi, 200)
+#y = np.sin(x)
+
+#fig, ax = plt.subplots()
+#ax.plot(x, y)
+#plt.show()
