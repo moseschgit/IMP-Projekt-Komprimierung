@@ -1,109 +1,9 @@
 #IMP Projekt: Bildkomprimierung 
 #Gruppe: Laurenz Jonathan Vanessa
 
+#Hier werden die RGB-Werte der Pixel definiert
 
-#Protokoll noch schreiben
-# schauen, was wir sonst noch machen müssen vanessa
-#codierung verstehen, erklären ycbcr laurenz
-#ideen holen, nachdenken wie man es programmieren könnte jonathan
-#protokoll schreiben : Jonathan
-#erklärung/ präsentation zum Projekt: Vanessa (schaut was wir bei der präsentation machen könnten, z.B. erklärung komprimierung generell, ycbcr generell usw.)
-#--> alles visualisieren und fortschritte, sowie notizen in gemeinsamme gruppe schicken
-
-
-#Überlegung 1 
-#Bild in Replit einfügen --> Überlegung 2 wird durchgeführt --> Bild wird komprimiert Ausgegeben
-# --> PROBLEM: KANN KEIN BILD EINFÜGEN/ AUSGEBEN
-
-
-
-#Überlegung 2
-#bild in der theorie komprimieren
-#pixel werden mit Listen angegeben, die zusammengefasst werden 
-#wenn pixel, die nebeneinander liegen ähnlich sind, werden sie zusammengefasst.
-#am Ende schauen, wie viel gespeichert wurde
-
-
-
-#Procreate design 
-
-
-#möglichkeit fürs Schaubild
-#import matplotlib.pyplot as plt
-#import numpy as np
-
-#x = np.linspace(0, 2 * np.pi, 200)
-#y = np.sin(x)
-
-#fig, ax = plt.subplots()
-#ax.plot(x, y)
-#plt.show()
-
-
-
-
-
-#Beispiel für einen kleinen Abschnitt des Bildes, der zusammengefasst wird
-
-#Jedes Bild wird in 16 Raster aufgeteilt (4x4) bei jedem Raster bestimmte Anzahl an Werten (hier im bsp. 8 Werte) --> NOCH SCHAUEN WIE MAN DIE EINZELNEN FARBEN IN ZAHLEN DEFINIERT
-
-#a1= 100
-#b2= 200
-#c3= 155
-#d4= 160
-#e5= 170
-#f6= 180
-#g7= 190
-#h8= 200
-
-#Listen werden mit Variablen aufgebaut 
-
-
-
-
-
-
-
-#l1 = [a1, b2, c3, d4, e5, f6,g7, h8]
-
-
-
-
-#Mittelwert wird ausgerechnet 
-
-#pythonic_machine_ages = [a1, b2, c3, d4, e5, f6,g7, h8]
-
-#def mean(dataset):
-#    return sum(dataset) / len(dataset)
-
-
-
-
-#print(mean(pythonic_machine_ages))
-
-#def pixelabfrage(rgb_im, x, y):
-# rgb_im = rgb_im
-#  x = x
-#  y = y
-#  r, g, b = rgb_im.getpixel ((x,y))
-
-#print ('Pixelkoordinaten:%3s%3s  rot:%3s grün:3%s  blau:%3s'% (x, y, r, g, b))
-
-#rgb in ycbcr umwandeln dann graustufe in liste eintragen und mittelwert
-
-
-
-
-#Pixel definieren
-#p=Pixel x=Zahl des Pixels
-
-#px
-#pixel bestehen aus r , g , b
-
-#Neue Pixel definieren: (aus 16 x 16 wird 4x4) --> hier werden die neuen Pixel als Spalten definiert
-
-
-#Wir wollten etwas programmieren, dass die Farben eines Bildes erkennt, was wir leider nicht geschafft haben, weshlab man die Farben manuell eintragen muss.
+print('Geben Sie bitte zuerst die RGB-Werte der 16 Pixel im Code an.')
 
 r1 = 255
 g1 = 0
@@ -170,6 +70,8 @@ g16 = 0
 b16 = 255
 
 
+#Die 16 Pixel werden in vier Gruppen unterteilt, sodass aus 4 pixeln mit unterschiedlichen Farben ein Zusammenschluss aus gleichen Farben wird, sodass man weniger Farben speichern muss, wodurch man weniger Speicherplatz braucht.
+
 #Pixel1 
 rp1 = [r1,r2,r3,r4]
 gp1 = [g1,g2,g3,g4]
@@ -192,9 +94,9 @@ bp4 = [b13,b14,b15,b16]
 
 
 
-#Mittelwert der RGB-Werte werden ausgerechnet, um die neuen RGB-Werte zu definieren
+#Hier wird der Mittelwert der RGB-Werte werden ausgerechnet, um den neuen RGB-Wert der vier Pixel zu definieren
 
-#Name = r=red/g=green/b=blue + m=Mittelwert + p=Pixel + 1-4=Nummer des Pixels
+#Aufbau des Variablenname's:  r=red/g=green/b=blue , m = Mittelwert , p = Pixel , 1-4 = Nummer des Pixels
 
 #1. Lösungsversuch: rmpx = sum(rpx) / len(rpx) --> hat nicht funktioniert
 
@@ -220,6 +122,12 @@ rmp4 = mean(rp4)
 gmp4 = mean(gp4)
 bmp4 = mean(bp4)
 
+
+print('Nach der Zusammenfassung der 16 Pixel gibt es nun neue RGB-Werte für jeden der vier neuen Pixel.')
+print('Die RGB-Werte für den 1. Pixel lauten:', rmp1, gmp1, bmp1)
+print('Die RGB-Werte für den 2. Pixel lauten:', rmp2, gmp2, bmp2)
+print('Die RGB-Werte für den 3. Pixel lauten:', rmp3, gmp3, bmp3)
+print('Die RGB-Werte für den 4. Pixel lauten:', rmp4, gmp4, bmp4)
 
 #Die RGB-Werte werden hier in YCbCr-Werte umgewandelt
 
@@ -247,4 +155,9 @@ Y4 = 0.299 * rmp4 + 0.587 * gmp4 + 0.114 * bmp4
 Cb4 = -0.169 * rmp4 - 0.331 * gmp4 + 0.500 * bmp4 
 Cr4= 0.500 * rmp4 - 0.419 * gmp4 - 0.081 * bmp4 
 
+print('Die RGB-Werte der vier neuen Pixel werden anschließend von RGB in YCBcr umgewandelt.')
 
+print('Die YCBcr-Werte für den 1. Pixel lauten:', Y1, Cb1, Cr1)
+print('Die YCBcr-Werte für den 2. Pixel lauten:', Y2, Cb2, Cr2)
+print('Die YCBcr-Werte für den 3. Pixel lauten:', Y3, Cb3, Cr3)
+print('Die YCBcr-Werte für den 4. Pixel lauten:', Y4, Cb4, Cr4)
